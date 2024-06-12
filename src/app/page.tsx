@@ -1,14 +1,18 @@
+import Footer from "@/components/footer";
+import PrincipalListItem from "@/components/principal-list-items";
+import PrincipalListLastPlaylists from "@/components/principal-list-last-playlists";
+import PrincipalListSuggestedPlaylists from "@/components/principal-list-suggested-playlists";
 import Sidebar from "@/components/sidebar";
 import { ChevronLeft, ChevronRight, Bell, Users } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="h-screen flex flex-col">
-      <div className="flex-1 p-3 flex gap-3">
+      <div className="h-full flex-1 px-3 pt-3 flex gap-3">
         <div className="w-80 h-full">
           <Sidebar />
         </div>
-        <div className="flex-1 flex flex-col gap-4 p-3 bg-gradient-to-b from-zinc-800 to-zinc-900 rounded-xl">
+        <div className="flex-1 flex h-full flex-col gap-4 p-3 bg-gradient-to-b from-zinc-800 to-zinc-900 rounded-xl">
           <div className="flex justify-between items-center">
             <div className="flex gap-2">
               <a
@@ -46,37 +50,20 @@ export default function Home() {
             </div>
           </div>
           <nav className="flex gap-2">
-            <a href="" className="bg-white text-black px-3 rounded-full">
-              Tudo
-            </a>
-            <a href="" className="bg-zinc-700 px-2 rounded-full">
-              Música
-            </a>
-            <a href="" className="bg-zinc-700 px-2 rounded-full">
-              Podcasts
-            </a>
+            <PrincipalListItem active title="Tudo" />
+            <PrincipalListItem title="Música" />
+            <PrincipalListItem title="Podcasts" />
           </nav>
           <div className="grid grid-cols-2 gap-2">
-            <div className="bg-zinc-700 rounded flex items-center overflow-hidden gap-2 font-semibold w-full">
-              <div className="w-11 h-11 bg-gradient-to-br from-indigo-700 to-indigo-300" />
-              <div>Lo-fi</div>
-            </div>
-            <div className="bg-zinc-700 rounded flex items-center overflow-hidden gap-2 font-semibold w-full">
-              <div className="w-11 h-11 bg-gradient-to-br from-indigo-700 to-indigo-300" />
-              <div>Lo-fi</div>
-            </div>
-            <div className="bg-zinc-700 rounded flex items-center overflow-hidden gap-2 font-semibold w-full">
-              <div className="w-11 h-11 bg-gradient-to-br from-indigo-700 to-indigo-300" />
-              <div>Lo-fi</div>
-            </div>
-            <div className="bg-zinc-700 rounded flex items-center overflow-hidden gap-2 font-semibold w-full">
-              <div className="w-11 h-11 bg-gradient-to-br from-indigo-700 to-indigo-300" />
-              <div>Lo-fi</div>
-            </div>
+            <PrincipalListLastPlaylists title="LoFI Worship" />
+            <PrincipalListLastPlaylists title="Corinho de fogo" />
+            <PrincipalListLastPlaylists title="Dia de pentecostes" />
+            <PrincipalListLastPlaylists title="Templo do Rock" />
           </div>
+          <PrincipalListSuggestedPlaylists title="Feito para Lucas Fernandes" />
         </div>
       </div>
-      <footer>footer</footer>
+      <Footer />
     </div>
   );
 }
